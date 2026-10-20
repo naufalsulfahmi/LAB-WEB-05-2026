@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papan Tugas Tim</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+</head>
+
+<body class="bg-gray-100 p-4 text-gray-800">
+
+  <h1 class="mb-4 text-center text-2xl font-bold">Papan Tugas Tim Marsha</h1>
+
+  <div class="mx-auto flex max-w-4xl flex-col gap-4 md:flex-row">
+
+    <div class="rounded-lg bg-white p-4 shadow md:w-64">
+      <h2 class="mb-2 font-bold">Anggota</h2>
+
+      <div id="status-anggota" class="text-sm"></div>
+
+      <div id="daftar-anggota" class="flex flex-col gap-1"></div>
+    </div>
+
+    <div class="flex-1 rounded-lg bg-white p-4 shadow">
+
+      <h2 id="judul-tugas" class="text-xl font-bold">Pilih anggota</h2>
+      <p id="ringkasan" class="mb-2 text-sm text-gray-500">Klik nama anggota untuk melihat tugasnya.</p>
+
+      <div class="mb-4 h-3 w-full rounded bg-gray-200">
+        <div id="bar-progres" class="h-3 w-0 rounded bg-green-500"></div>
+      </div>
+
+      <input id="cari" type="text" placeholder="Cari judul tugas"
+        class="mb-3 w-full rounded border border-gray-300 p-2">
+
+      <form id="form-tambah" class="flex gap-2">
+        <input id="judul-baru" type="text" placeholder="Tambah tugas baru, minimal 5 karakter"
+          class="flex-1 rounded border border-gray-300 p-2">
+        <button id="btn-simpan" type="submit"
+          class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 disabled:opacity-50">Simpan</button>
+      </form>
+
+      <p id="error-form" class="mb-3 mt-1 min-h-[1.25rem] text-sm text-red-500"></p>
+
+      <div id="status-tugas" class="mb-2 empty:hidden"></div>
+
+      <p id="kosong" class="hidden text-gray-500">Tidak ada tugas yang cocok.</p>
+
+      <ul id="daftar-tugas"></ul>
+    </div>
+  </div>
+
+  <div id="notifikasi" class="fixed bottom-4 right-4 hidden rounded bg-green-500 px-4 py-2 text-white shadow"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
